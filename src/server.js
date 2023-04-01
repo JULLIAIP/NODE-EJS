@@ -9,13 +9,13 @@ app.set("view engine", "ejs")
 //criando rota
 app.get("/", (req, res) => {
 
-    res.render("index")
+    res.render("pages/home")
 
 })
 
 app.get("/about", (req, res) => {
 
-    res.render("about")
+    res.render("pages/about")
 
 })
 
