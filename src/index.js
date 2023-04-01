@@ -1,4 +1,5 @@
-const express = require("express")
+const express = require("express");
+const countries = require("./countries")
 
 //1º instancia o express
 const app = express()
@@ -9,7 +10,9 @@ app.set("view engine", "ejs")
 //criando rota
 app.get("/", (req, res) => {
 
-    res.render("pages/home")
+    res.render("pages/home", {
+        data: countries
+    })
 
 })
 
@@ -22,6 +25,7 @@ app.get("/about", (req, res) => {
 //função do express que ouve uma porta
 
 app.listen(3003)
-console.log("roando na porta 3003")
+console.log("rodando na porta 3003")
+console.table(countries)
 
 

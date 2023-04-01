@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<%- include('../partials/head'); %>
+<!-- como segundo parametro do include, podemos passar, separado por vígula, um objeto
+             que poderá ser acessado pelo "componente", mais ou menos como funcionan as props. -->
+<%- include('../partials/head', {pagina: 'home' }); %>
 
     <body class="container">
+
         <%- include('../partials/header'); %>
 
             <main class="jumbotron">
-                Rodando HTML com NODE
+
+                Lista Países:
+
+                <ul>
+
+                    <% data.forEach((country)=>{ %>
+
+                        <li>
+                            <%= country.name %>
+                        </li>
+
+                        <% }) %>
+
+                </ul>
             </main>
 
             <%- include('../partials/footer');%>
